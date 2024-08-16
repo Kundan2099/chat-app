@@ -14,6 +14,9 @@
     {{-- Stylesheets --}}
     <link rel="stylesheet" href="{{ asset('admin/css/app.css?v=12') }}">
 
+    {{-- Chat --}}
+    <link rel="stylesheet" href="{{ asset('chat/css/chat.css') }}">
+
     {{-- Title --}}
     <title>Admin Panel </title>
 
@@ -57,6 +60,9 @@
 
     {{-- Script --}}
     <script src="{{ asset('admin/js/app.js') }}"></script>
+
+    {{-- Chat Script --}}
+    <script src="{{ asset('admin/js/chat.js') }}"></script>
 
     @yield('panel-script')
 

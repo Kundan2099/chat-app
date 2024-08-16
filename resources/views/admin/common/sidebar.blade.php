@@ -32,6 +32,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-tab" id="chat-tab">
+                    <a href="{{ route('admin.view.chat.chat') }}">
+                        <i data-feather="shield"></i>
+                        <span>Chat</span>
+                    </a>
+                </li>
+
                 {{-- <li class="sidebar-tab" id="setting-tab">
                     <a href="{{route('admin.view.setting')}}">
                         <i data-feather="settings"></i>

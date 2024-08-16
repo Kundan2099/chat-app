@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAccessController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ChatComponentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SubCategoryController;
@@ -50,5 +51,10 @@ Route::middleware('auth:admin')->group(function () {
         Route::post('/update/{id}', 'handleAdminAccessUpdate')->name('admin.handle.admin.access.update');
         Route::put('/status', 'handleToggleAdminAccessStatus')->name('admin.handle.admin.access.status');
         Route::get('/delete/{id}', 'handleAdminAccessDelete')->name('admin.handle.admin.access.delete');
+    });
+
+    Route::prefix('chat')->controller(ChatComponentController::class)->group(function () {
+        Route::get('/', 'viewChat')->name('admin.view.chat.chat');
+
     });
 });

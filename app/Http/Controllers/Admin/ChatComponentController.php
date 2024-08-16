@@ -27,7 +27,7 @@ class ChatComponentController extends Controller
     {
         try {
             return view(
-                'admin.pages.access.access-list'
+                'admin.pages.chat.chat'
             );
         } catch (Exception $exception) {
             return redirect()->back()->with('message', [
