@@ -19,38 +19,25 @@
 
         <div class="mt-20 mb-16">
             @foreach ($messages as $message)
-                @if ($message['sender'] != auth()->used()->name)
-                {{-- @if (isset($message['sender']) && $message['sender'] != auth()->used()->name) --}}
+                @if (auth()->user()->id == $message->sender_id)
                     <div class="clearfix w-4/4">
-                        <div class="bg-gray-300 mx-4 my-2 p-2 rounded-lg inline-block">{{ $message['sender'] }}</div>
+                        <div class="text-right">
+                            <div class="bg-green-300 mx-4 my-2 p-2 rounded-lg inline-block">
+                                {{ $message->message }}
+                            </div>
+                        </div>
                     </div>
                 @else
                     <div class="clearfix w-4/4">
-                        <div class="text-right">
-                            <p class="bg-green-300 mx-4 my-2 p-2 rounded-lg inline-block">
-                                {{ isset($message['message']) && $message['message'] }} <b>: You</b>
+                        <div class="text-left">
+                            <p class="bg-gray-300 mx-4 my-2 p-2 rounded-lg inline-block">
+                            {{ $message->message }}
                             </p>
                         </div>
                     </div>
                 @endif
             @endforeach
         </div>
-
-        {{-- <div class="mt-20 mb-16">
-            <div class="clearfix">
-                <div class="bg-gray-300 w-3/4 mx-4 my-2 p-2 rounded-lg">this is a basic mobile chat layout, build with
-                    tailwind css</div>
-            </div>
-
-            <div class="clearfix">
-                <div class="bg-gray-300 w-3/4 mx-4 my-2 p-2 rounded-lg clearfix">It will be used for a full tutorial
-                    about building a chat app with vue, tailwind and firebase.</div>
-            </div>
-            <div class="clearfix">
-                <div class="bg-green-300 float-right w-3/4 mx-4 my-2 p-2 rounded-lg clearfix">check my twitter to see
-                    when it will be released.</div>
-            </div>
-        </div> --}}
     </div>
 
     {{-- From --}}
